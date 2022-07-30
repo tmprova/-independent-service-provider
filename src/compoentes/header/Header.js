@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Container,Nav, Navbar, NavLink } from 'react-bootstrap';
 
@@ -6,9 +7,9 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
     <>
-<Navbar bg="light" variant="light">
-        <Container className='text-info font-weight-bold '>
-          <Navbar.Brand as={Link} to='/about-us'>Lawyer's petition</Navbar.Brand>
+<Navbar bg="light" variant="light" className='sticky-top'>
+        <Container >
+          <Navbar.Brand className='text-info font-weight-bold' as={Link} to='/about-us'>Lawyer's petition</Navbar.Brand>
           <Nav className=" d-flex justify-content-end">
             
             <Nav.Link as={Link} to="/">Home</Nav.Link>
