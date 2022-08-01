@@ -35,8 +35,8 @@ import lawSuit from '../../../assets/ServicePic/law-suit.jpg'
 const Services = () => {
  const [service,setService]=useState([]);
   return (
-    <div>
-      <h1>this is service:{services.length}</h1>
+    <div className="m-5 p-4">
+      
       <div className="d-flex justify-content-between p-4">
         {services.map(service=><Service key={service.id} service={service}></Service>)}
       </div>
