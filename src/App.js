@@ -1,5 +1,4 @@
-
-import { Routes, Route, } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./compoentes/Home/Home";
 
@@ -10,6 +9,8 @@ import NotFound from "./compoentes/notfound/NotFound";
 import Header from "./compoentes/header/Header";
 import Footer from "./compoentes/footer/Footer";
 import Blogs from "./compoentes/blogs/Blogs";
+import SignUp from "./compoentes/login/signup/SignUp";
+import RequireAuth from "./compoentes/login/requireauth/RequireAuth";
 
 function App() {
   return (
@@ -18,8 +19,11 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/checkout"element={<Checkout></Checkout>}></Route>
+        <Route path="/checkout" element={<RequireAuth>
+          <Checkout></Checkout>
+        </RequireAuth>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/about-us" element={<About></About>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
