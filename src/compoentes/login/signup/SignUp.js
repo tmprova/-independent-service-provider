@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -6,6 +6,7 @@ import auth from '../../../firebase/firebase.init';
 
 const SignUp = () => {
 
+  const [agree,setAgree]=useState(false);
 
   const emailRef = useRef('');
   const passwordRef = useRef('');
@@ -37,9 +38,9 @@ const handleSignUp = event =>{
 
 
     return (
-        <div className='container w-50 mx-auto'>
+        <div className='container w-50 mx-auto ' style={{height:"530px"}}>
             <h1>this is signup</h1>
-            <Form onSubmit={handleSignUp}>
+            <Form onSubmit={handleSignUp} style={{height:"350px",width:"50%",}}>
          
             <Form.Label>Name</Form.Label>
             <Form.Control type="text" name="name" placeholder="Enter Your Name"  required/>
@@ -56,9 +57,9 @@ const handleSignUp = event =>{
             <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
+            <Form.Check onClick={()=>setAgree(!agree)} type="checkbox" name="terms" className={agree? '': 'text-danger'} label="Accept terms & Conditions" />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button disabled={!agree} className='w-50' variant="primary" type="submit">
             Sign Up
           </Button>
         </Form>

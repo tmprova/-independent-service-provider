@@ -36,7 +36,7 @@ const Services = () => {
  const [service,setService]=useState([]);
   return (
     <div className="container">
-      <h2 classname='text-center mt-3 p-auto'>Services</h2>
+      <h2 className='text-center mt-3 p-auto'>Services</h2>
 
 <div className="row m-auto p-4 ">
       {services.map(service=><Service key={service.id} service={service}></Service>)}

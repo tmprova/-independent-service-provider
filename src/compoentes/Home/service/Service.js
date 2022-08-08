@@ -1,10 +1,11 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Service = (props) => {
   const { name, img, description, price } = props.service;
+  const navigate = useNavigate()
   
   return (
     <div className="col-sm-12 col-md-6 col-lg-4 "> 
@@ -22,7 +23,7 @@ const Service = (props) => {
               fee's:${price}
                <small>per hour</small>
             </p>
-            <Button onClick={() => console.log("click")} variant="primary">
+            <Button onClick={() => navigate('/checkout')} variant="primary">
               contact us now
             </Button>
           </Card.Body>

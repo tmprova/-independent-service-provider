@@ -1,10 +1,20 @@
-/* eslint-disable no-unused-vars */
+
+import { signOut } from "firebase/auth";
 import React from "react";
 import { Container, Nav, Navbar, NavLink } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 import { Link } from "react-router-dom";
+import auth from "../../firebase/firebase.init";
 
 const Header = () => {
+
+  const [user] = useAuthState(auth);
+
+  const handleLogOut = () =>{
+      signOut(auth);
+  };
+
   return (
     <>
       <Navbar
@@ -33,12 +43,16 @@ const Header = () => {
             <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link> 
-            <Nav.Link as={Link} to="checkout">
+            {/* <Nav.Link as={Link} to="checkout">
                 Checkout
-              </Nav.Link>
-              <Nav.Link as={Link} to="/login">
+              </Nav.Link> */}
+              {
+                user? 
+                <Nav.Link as={Link} onClick={handleLogOut} to='/'>Log out</Nav.Link>
+                :<Nav.Link as={Link} to="/login">
                 Login
               </Nav.Link>
+              }
               <Nav.Link as={Link} to="/blogs">
                 Blogs(Q&A)
               </Nav.Link>
