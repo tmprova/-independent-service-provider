@@ -5,8 +5,9 @@ import { Container, Nav, Navbar, NavLink } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import { Link } from "react-router-dom";
-import CustomLink from "../../customlink/CustomLink";
+
 import auth from "../../firebase/firebase.init";
+import CustomLink from "../customlink/CustomLink";
 
 const Header = () => {
 

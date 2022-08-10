@@ -1,14 +1,16 @@
+/* eslint-disable no-unused-vars */
 import React, { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Form,  } from "react-bootstrap";
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from "react-firebase-hooks/auth";
 import auth from "../../../firebase/firebase.init";
+
 import { async } from "@firebase/util";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from "../../loading/Loading";
 import Social from "../social/Social";
-import Footer from "../../footer/Footer";
+
 
 
 const SignUp = () => {
@@ -21,9 +23,9 @@ const SignUp = () => {
     user, 
     loading, 
     error] =useCreateUserWithEmailAndPassword(auth);
-    const [updateProfile, updating, updateError] = useUpdateProfile(auth ,);
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth ,{sendEmailVerification:true});
 
-// {sendEmailVerification:true}
+ 
 
   const navigate = useNavigate();
 
