@@ -3,12 +3,14 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from 'react-toastify';
 // import { toast, ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 import "./checkout.css"
 
 const Checkout = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = () => {
-        toast("thank you,for reaching us");
+    const onSubmit = (e) => {
+        
+        toast.info("thank you,for reaching us");
     };
 
     

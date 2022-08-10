@@ -15,7 +15,7 @@ import RequireAuth from "./compoentes/login/requireauth/RequireAuth";
 function App() {
   return (
     <div className="App">
-      <h1>this is assaingment 10</h1>
+     
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>

@@ -5,6 +5,10 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from "react-fireb
 import auth from "../../../firebase/firebase.init";
 import { async } from "@firebase/util";
 import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import Loading from "../../loading/Loading";
+import Social from "../social/Social";
+
 
 const SignUp = () => {
   const [agree, setAgree] = useState(false);
@@ -16,9 +20,9 @@ const SignUp = () => {
     user, 
     loading, 
     error] =useCreateUserWithEmailAndPassword(auth);
-    const [updateProfile, updating, updateError] = useUpdateProfile(auth ,{sendEmailVerification:true});
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth ,);
 
-
+// {sendEmailVerification:true}
 
   const navigate = useNavigate();
 
@@ -29,24 +33,29 @@ const SignUp = () => {
   // if (user) {
     
   // }
+  if(loading||updating){
+    return <Loading/>;
+}
 
-  const handleSignUp = async (event) => {
-    event.preventDefault();
-    const name = event.target.name.value;
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName:name });
-    toast('Updated profile',);
+    toast('Updated profile');
 navigate("/");
   };
 
   return (
-    <div className="container w-50 mx-auto " style={{ height: "530px" }}>
-      <h1>this is signup</h1>
-      <Form onSubmit={handleSignUp} style={{ height: "350px", width: "50%" }}>
-        <Form.Label>Name</Form.Label>
+    <div className="container w-50 mx-auto" 
+    style={{ height: "600px" }}
+    >
+      <h2 className="text-info text-center">Please Signup</h2>
+      <Form className='form-group' onSubmit={handleSignUp} style={{ height: "350px", width: "75%" }}>
+        <Form.Label></Form.Label>
         <Form.Control
         // ref={nameRef}
           type="text"
@@ -55,7 +64,7 @@ navigate("/");
           required
         />
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label></Form.Label>
           <Form.Control
             ref={emailRef}
             type="email"
@@ -68,7 +77,7 @@ navigate("/");
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label></Form.Label>
           <Form.Control
             ref={passwordRef}
             type="password"
@@ -87,8 +96,8 @@ navigate("/");
         </Form.Group>
         <Button
           disabled={!agree}
-          className="w-50"
-          variant="primary"
+          className="w-50 text-white"
+          variant="info"
           type="submit"
         >
           Sign Up
@@ -105,6 +114,7 @@ navigate("/");
         </Link>
       </p>
       <ToastContainer/>
+      <Social></Social>
     </div>
   );
 };
