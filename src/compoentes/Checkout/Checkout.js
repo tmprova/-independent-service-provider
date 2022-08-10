@@ -4,9 +4,11 @@ import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from 'react-toastify';
 // import { toast, ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
-import "./checkout.css"
+import "./checkout.css";
+
 
 const Checkout = () => {
+    
     const { register, handleSubmit } = useForm();
     const onSubmit = (e) => {
         
@@ -19,6 +21,7 @@ const Checkout = () => {
         <div>
             <ToastContainer/>
             <h1>Thank you for reaching us..</h1>
+            
 <div className="form-box">
 <form className='form-group' onSubmit={handleSubmit(onSubmit)} >
 <input {...register("firstName", { required: true, maxLength: 20 })} placeholder={'First name'}/>

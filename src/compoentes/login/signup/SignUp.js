@@ -8,6 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from "../../loading/Loading";
 import Social from "../social/Social";
+import Footer from "../../footer/Footer";
 
 
 const SignUp = () => {

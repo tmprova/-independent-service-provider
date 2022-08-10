@@ -1,11 +1,13 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Service = (props) => {
   const { name, img, description, price } = props.service;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  
   
   return (
     <div className="col-sm-12 col-md-6 col-lg-4 "> 
