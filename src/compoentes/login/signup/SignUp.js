@@ -15,7 +15,8 @@ import Social from "../social/Social";
 
 const SignUp = () => {
   const [agree, setAgree] = useState(false);
-// const name=useRef("");
+//  const name=useRef("");
+  const nameRef=useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
 
@@ -40,7 +41,8 @@ const SignUp = () => {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
+    // const name = e.target.name.value;
+     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
@@ -58,7 +60,7 @@ navigate("/");
       <Form className='form-group mx-auto' onSubmit={handleSignUp} style={{ height: "350px", width: "75%" }}>
         <Form.Label></Form.Label>
         <Form.Control
-        // ref={nameRef}
+         ref={nameRef}
           type="text"
           name="name"
           placeholder="Enter Your Name"
