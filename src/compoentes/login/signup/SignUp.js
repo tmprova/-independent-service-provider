@@ -25,8 +25,6 @@ const SignUp = () => {
     error] =useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth ,{sendEmailVerification:true});
 
- 
-
   const navigate = useNavigate();
 
   const navigateLogin = () => {
@@ -113,7 +111,7 @@ navigate("/");
           className="text-danger pe-auto text-decoration-none"
           onClick={navigateLogin}
         >
-          Please Login
+         <span className="p-2 m-2"> Please Login</span>
         </Link>
       </p>
       <ToastContainer/>

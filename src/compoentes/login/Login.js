@@ -48,9 +48,7 @@ if(error||errorReset){
       case "auth/wrong-password":
           toast("password is incorrect,please try again")
           break;
-      case "undefined":
-          toast("e-mail is required")
-          break;
+
       default:
           toast("something went wrong")
   }
@@ -74,8 +72,13 @@ if(error||errorReset){
 
   const resetPassword= async (e)=>{
     const email = emailRef.current.value;
-    await sendPasswordResetEmail(email);
+    if(email){
+      await sendPasswordResetEmail(email);
     toast('Sent email');
+    }
+    else {
+      toast('enter your email address')
+    }
   }
 
   return (
@@ -118,18 +121,18 @@ if(error||errorReset){
           className="text-danger pe-auto text-decoration-none"
           onClick={navigateSignUp}
         >
-          Please Sign Up
+         <span className="p-2 m-2"> Please Sign Up</span>
         </Link>
       </p>
       <p>
         Forget password?
-        <Link
-          to="/login"
-          className="text-danger pe-auto text-decoration-none"
+        <button
+          
+          className="btn btn-link text-danger pe-auto text-decoration-none"
           onClick={resetPassword}
         >
           Reset Password
-        </Link>
+        </button>
       </p>
       <Social></Social>
     </div>
