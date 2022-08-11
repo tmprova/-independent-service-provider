@@ -1,6 +1,34 @@
+# Project: Lawyer's Petition
+
+
+# Live Site Link down below:>
+
+
+[Create React App](https://github.com/facebook/create-react-app)
+
+
+# short description on projects:
+
+  * It is about lawyer service
+      * visitors can sign in as user
+         * one can only book services if he/she is registerd 
+          * 
+# list of technologies (frameworks, libraries):
+- react & react-router dom
+   - Bootstarp & react-Bootstarp
+         - Firebase & react-Firebase
+          - react-hook form
+          - react-toastify
+          - react-icons
+
+
+
+
+
+
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with .
 
 ## Available Scripts
 

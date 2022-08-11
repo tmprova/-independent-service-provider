@@ -3,7 +3,7 @@ import React from "react";
 const Blogs = () => {
   return (
     <div className="row m-auto g-4">
-      <div className=" col-5 border m-2 ms-5 p-2 ">
+      <div className=" col-5 border m-2 ms-5 p-2 rounded">
         <h4>Difference between authorization and authentication?</h4>
         <hr />
         <p>
@@ -21,7 +21,7 @@ const Blogs = () => {
           user.
         </p>
       </div>
-      <div className=" col-5 border m-2 ms-5 p-2 ">
+      <div className=" col-5 border m-2 ms-5 p-2 rounded">
         <h4>
           Why are you using firebase? What other options do you have to
           implement authentication?
@@ -42,7 +42,7 @@ const Blogs = () => {
           structure).Passport.Okta.JSON Web Token.Amazon Cognito.Keycloak.
         </p>
       </div>
-      <div className="col-5 border m-2 ms-5 p-2 mt-2">
+      <div className="col-5 border m-2 ms-5 p-2 mt-2 rounded">
         <h4>
           What other services does firebase provide other than authentication?
         </h4>

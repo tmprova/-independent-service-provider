@@ -33,7 +33,7 @@ if (loading||sending){
 //      errorElement=  <p className='text-danger'>Error: {error?.message} {errorReset?.message}</p>
 //   };
 if(error||errorReset){
-  // console.log(error)
+   console.log(error)
   switch(error?.code){
       case "auth/invalid-email":
           toast("Invalid email provided, please provide a valid email");
@@ -47,6 +47,9 @@ if(error||errorReset){
           break;
       case "auth/wrong-password":
           toast("password is incorrect,please try again")
+          break;
+      case "undefined":
+          toast("e-mail is required")
           break;
       default:
           toast("something went wrong")
@@ -76,10 +79,10 @@ if(error||errorReset){
   }
 
   return (
-    <div className="container w-50 mx-auto" style={{ height: "580px" }}>
+    <div className="container w-50 mx-auto my-2 border rounded" style={{ height: "580px" }}>
       <ToastContainer/>
       <h1 className="text-info">Please Login</h1>
-      <Form onSubmit={handleSubmit} style={{ height: "300px", width: "75%",textAlign:"center"}}>
+      <Form onSubmit={handleSubmit} className="mx-auto" style={{ height: "300px", width: "75%",textAlign:"center"}}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label></Form.Label>
           <Form.Control

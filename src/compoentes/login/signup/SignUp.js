@@ -53,11 +53,11 @@ navigate("/");
   };
 
   return (
-    <div className="container w-50 mx-auto" 
+    <div className="container w-50 mx-auto my-2 border rounded" 
     style={{ height: "600px" }}
     >
-      <h2 className="text-info text-center">Please Signup</h2>
-      <Form className='form-group' onSubmit={handleSignUp} style={{ height: "350px", width: "75%" }}>
+      <h1 className="text-info text-center">Please Signup</h1>
+      <Form className='form-group mx-auto' onSubmit={handleSignUp} style={{ height: "350px", width: "75%" }}>
         <Form.Label></Form.Label>
         <Form.Control
         // ref={nameRef}
