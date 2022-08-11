@@ -1,7 +1,7 @@
 # Project: Lawyer's Petition
 
 
-# Live Site Link down : [Lawyer's Petition](https://lawyer-s-petition.web.app/)
+# Live Site Link : [Lawyer's Petition](https://lawyer-s-petition.web.app/)
 
 [Lawyer's Petition](https://lawyer-s-petition.web.app/)
 
